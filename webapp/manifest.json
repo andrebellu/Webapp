@@ -20,7 +20,7 @@
     },
     "sap.ui5": {
         "rootView": {
-            "viewName": "sap.ui.demo.walkthrough.view.App",
+            "viewName": "sap.ui.demo.walkthrough.view.Rapportini",
             "type": "XML",
             "id": "app"
         },
@@ -46,7 +46,22 @@
                 {
                     "uri": "css/style.css"
                 }
+            ],
+            "elementi":[
+                {
+                    "type": "sap.ui.model.json.JSONModel",
+                    "uri": "model/data.json"
+                }
             ]
-        }
+        },
+        "config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"model/data.json",
+					"manifest.json"
+				]
+			}
+		}
     }
 }
