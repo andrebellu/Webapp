@@ -3,21 +3,24 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 
-	<Shell>
 		<App>
 			<Panel
 				headerText="{i18n>helloPanelTitle}"
 				class="header">
-				<List noDataText="suca non ci sono elementi" items="{/items}" id="list0">
-					<items>
-						<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" id="item0" onPress=".clicked"/>
-					</items>
+					<ScrollContainer height="100%"
+						width="100%"
+						vertical="true"
+						focusable="true">
+				<List noDataText="suca non ci sono elementi" items="{/items}" class="listina">
+						<items>
+							<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
+						</items>
 					<swipeContent>
 						<Button press="handleReject" />
 					</swipeContent>
 				</List>
+					</ScrollContainer>
 			</Panel>
 		</App>
-	</Shell>
 
 </mvc:View>

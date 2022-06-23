@@ -37,6 +37,10 @@ var ListController = Controller.extend("sap.ui.demo.walkthrough.controller.Rappo
         oList.swipeOut();
     },
 
+    clicked: function(evt) {
+        MessageToast.show("ciao");
+    }
+
 });
 
 
