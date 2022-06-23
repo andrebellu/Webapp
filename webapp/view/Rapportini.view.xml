@@ -8,7 +8,7 @@
 			items="{/ProductCollection}"
 			swipe="handleSwipe">
 			<StandardListItem
-				title="{Name}"
+				title="andre"
 				description="{ProductId}"
 				icon="{ProductPicUrl}"
 				iconDensityAware="false"
