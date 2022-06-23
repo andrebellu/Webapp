@@ -1,18 +1,22 @@
-html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
-    margin-right: 0.500rem;
+.noScroll{
+    overflow: hidden;
 }
 
-.myAppDemoWT .myCustomText {
-    display: inline-block;
+.regestaLogo{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: lightcoral;
 }
 
-.dateBtn.sapMBtn {
-    display: block;
+.loginHeader{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.item1{
-    width: 80%;
-    margin-bottom: 0.500rem;
+.flexCenter{
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.3);
 }
