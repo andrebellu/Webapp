@@ -1,0 +1,22 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.Rapportini"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+
+	<List
+			headerText="Rapportini"
+			items="{/ProductCollection}"
+			swipe="handleSwipe">
+			<StandardListItem
+				title="{Name}"
+				description="{ProductId}"
+				icon="{ProductPicUrl}"
+				iconDensityAware="false"
+				iconInset="false" />
+			<swipeContent>
+				<Button press="handleReject" />
+			</swipeContent>
+
+	</List>   	
+
+</mvc:View>
