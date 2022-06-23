@@ -7,31 +7,31 @@
 	<App>
 		<Panel>
 
-		<Label text="Rapportini" class="titleRP"/>
+				<Label text="Rapportini" class="titleRP"/>
+			<!-- 
+				<FlexBox class="fl">
+					<l:VerticalLayout>
+						<u:Calendar class="calendar" select="handleCalendarSelect" minDate="{path: '/minDate'}" maxDate="{path: '/maxDate'}" disabledDates="{path: '/disabled'}" showCurrentDateButton="true">
+							<u:disabledDates>
+								<u:DateRange startDate="{start}" endDate="{end}"/>
+							</u:disabledDates>
+						</u:Calendar>
+					</l:VerticalLayout>
+				</FlexBox>
+			-->
+				<Button class="btnDP" ariaHasPopup="Dialog" text="Open Date Picker" press=".openDatePicker" />
 
-		<!-- 
-			<FlexBox class="fl">
-				<l:VerticalLayout>
-					<u:Calendar class="calendar" select="handleCalendarSelect" minDate="{path: '/minDate'}" maxDate="{path: '/maxDate'}" disabledDates="{path: '/disabled'}" showCurrentDateButton="true">
-						<u:disabledDates>
-							<u:DateRange startDate="{start}" endDate="{end}"/>
-						</u:disabledDates>
-					</u:Calendar>
-				</l:VerticalLayout>
-			</FlexBox>
-		-->
-			<Button class="btnDP" ariaHasPopup="Dialog" text="Open Date Picker" press=".openDatePicker" />
+				<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
 
-			<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
+				<List noDataText="No element to display" items="{/items}">
+					<items>
+						<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
+					</items>
+					<swipeContent>
+						<Button press="handleEdit" icon="sap-icon://edit"/>
+					</swipeContent>
+				</List>
 
-			<List noDataText="suca non ci sono elementi" items="{/items}" class="listina">
-				<items>
-					<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
-				</items>
-				<swipeContent>
-					<Button press="handleReject" />
-				</swipeContent>
-			</List>
 		</Panel>
 	</App>
 

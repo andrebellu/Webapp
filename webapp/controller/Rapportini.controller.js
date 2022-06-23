@@ -54,13 +54,11 @@ sap.ui.define(
                     MessageToast.show(msg);
                 },
 
-                handleReject: function (evt) {
-                    var oList = evt.getSource().getParent();
-                    oList.removeAggregation("items", oList.getSwipedItem());
-                    oList.swipeOut();
+                handleEdit: function () {
+                    MessageToast.show("Edit button pressed");
                 },
 
-                clicked: function (evt) {
+                clicked: function () {
                     MessageToast.show("ciao");
                 },
                 handleSelectToday: function (oEvent) {
@@ -81,6 +79,9 @@ sap.ui.define(
                         "Date selected: " + oEvent.getParameter("value")
                     );
                 },
+                handleHomeIconPress: function(oEvent) {
+                    MessageToast.show("Home icon pressed");
+                }
             }
         );
     }

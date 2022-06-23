@@ -2,6 +2,10 @@ html {
     height: auto !important;
 }
 
+.tabBar{
+    position: sticky;
+}
+
 .titleRP{
     display: flex;
     font-family: 'Poppins', sans-serif;
@@ -31,8 +35,8 @@ html {
     justify-content: center;
 }
 
-.btnDP:focus{
-    outline: none;
+.btnDP:focus span{
+    outline: none !important;
 }
 
 .calendar {
