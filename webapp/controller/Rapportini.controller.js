@@ -55,7 +55,8 @@ sap.ui.define(
                 },
 
                 handleEdit: function () {
-                    MessageToast.show("Edit button pressed");
+                    var oButton = oEvent.getSource();
+                    this.byId("actionSheet").openBy(oButton);
                 },
 
                 clicked: function () {
@@ -79,9 +80,9 @@ sap.ui.define(
                         "Date selected: " + oEvent.getParameter("value")
                     );
                 },
-                handleHomeIconPress: function(oEvent) {
+                handleHomeIconPress: function (oEvent) {
                     MessageToast.show("Home icon pressed");
-                }
+                },
             }
         );
     }

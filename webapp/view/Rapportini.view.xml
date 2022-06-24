@@ -28,7 +28,7 @@
 						<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
 					</items>
 					<swipeContent>
-						<Button press="handleEdit" icon="sap-icon://edit"/>
+						<Button press="handleEdit" icon="sap-icon://overflow"/>
 					</swipeContent>
 				</List>
 

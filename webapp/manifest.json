@@ -59,7 +59,8 @@
 				"stretch": true,
 				"files": [
 					"model/data.json",
-					"manifest.json"
+					"manifest.json",
+                    "view/ActionSheet.fragment.xml"
 				]
 			}
 		}
