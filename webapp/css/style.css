@@ -27,6 +27,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+input:focus textarea{
+    outline: none !important;
+}
+
 .roundedButton span{
     border-radius: 50px !important;
     font-size: 12px;

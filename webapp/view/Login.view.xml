@@ -6,7 +6,7 @@
     displayBlock="true">
     <Shell class="noScroll">
         <FlexBox
-            height="100vh"
+            height="90vh"
             class="flexCenter">
            
             <l:VerticalLayout class="sapUiContentPadding" width="100%">
@@ -23,7 +23,7 @@
                     type : 'sap.ui.model.type.String',
                     constraints : {
                         minLength: 1,
-                        maxLength: 21
+                        maxLength: 50
                     }
                 }"
                 change= ".onNameChange" />
