@@ -1,0 +1,256 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<App>
+		<Page showHeader="false">
+
+			
+			<form:SimpleForm title="Rapportino"  editable="true"  >
+
+				<Label text="Utente* " labelFor="nameInput"/>
+				<Input
+					id="nameInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="Enter name"/>
+
+				<Label text="Giorno* " labelFor="giornoInput"/>
+				
+				<DatePicker
+				id="giornoInput"
+				displayFormat="short"
+				change="handleChange"
+				class="sapUiSmallMarginBottom"/>
+
+
+				<Label text="Ore* " labelFor="oreInput"/>
+				<Input
+					id="oreInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder="digita numeri"
+					width="110px"/>
+
+
+				<Label text="Ticket* " labelFor="ticketInput" />
+				<Input
+					id="ticketInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="digita ticket"
+					showSuggestion="true">
+			
+				</Input>	
+
+				<Label text="Cliente " labelFor="clienteInput"/>
+				<Input
+					id="clienteInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="digita nome"
+					enabled="false" />
+				
+
+				<Label text="Commessa " labelFor="commessaInput"/>
+				<Input
+					id="commessaInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="digita commessa"
+					enabled="false"/>
+
+				<Label text="Sede " labelFor="sedeInput"/>
+				
+				<ComboBox id="comboBox">
+					<items>
+						<!--non da errore-->
+						<core:Item xmlns:core="sap.ui.core" text="UF"/>
+						<core:Item xmlns:core="sap.ui.core" text="CL"/>
+						<core:Item xmlns:core="sap.ui.core" text="CA"/>
+						<core:Item xmlns:core="sap.ui.core" text="SW"/>
+					</items>
+				</ComboBox>
+				<Label text="Destinazione " labelFor="destinazioneInput"/>
+				<Input
+					id="destinazioneInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="digita sede"/>
+
+				<Label text="Descrizione* " labelFor="descrizioneInput"/>
+				<Input
+					id="descrizioneInput"
+					class="sapUiSmallMarginBottom"
+					placeholder="scrive descrizione"/>
+
+
+			</form:SimpleForm>
+			<Panel expandable="true" headerText="" class="sapUiDemoFlexBoxSizeAdjustments">
+			<FlexBox alignItems="Start" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems" id="Flexbox1"> 
+				<Label text="Km: " labelFor="kmInput" width="50px"/>
+				<Input
+					id="kmInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+				
+
+				<Label text="KmEuro: " labelFor="kmEuroInput" width="65px"/>
+				<Input
+					id="kmEuroInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+				<Label text="Pedaggio: " labelFor="pedaggioInput" width="70px"/>
+				<Input
+					id="pedaggioInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+			</FlexBox>
+			<FlexBox alignItems="Start" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems" id="Flexbox2">
+
+				<Label text="Forfait: " labelFor="forfaitInput" width="60px"/>
+				<Input
+					id="forfaitInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+				<Label text="Vitto: " labelFor="vittoInput" width="55px"/>
+				<Input
+					id="vittoInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+				
+				<Label text="Alloggio: " labelFor="alloggioInput" width="60px"/>
+				<Input
+					id="alloggioInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+
+			</FlexBox>
+			<FlexBox alignItems="Start" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems" id="Flexbox3">
+				<Label text="Noleggio: " labelFor="noleggioInput" width="65px"/>
+				<Input
+					id="noleggioInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+
+				<Label text="Trasporti: " labelFor="trasportiInput" width="65px"/>
+				<Input
+					id="trasportiInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+
+				<Label text="Varie: " labelFor="varieInput" width="40px"/>
+				<Input
+					id="varieInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Input>
+			</FlexBox>
+			<FlexBox alignItems="Start" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems" id="Flexbox4">
+				<Label text="Riservato: " labelFor="riservatoInput" width="70px"/>
+				<Input
+					id="riservatoInput"
+					type="Number"
+					class="sapUiSmallMarginBottom"
+					placeholder=""
+					width="50px">
+					<layoutData>
+						<FlexItemData growFactor="2" />
+					</layoutData>
+					</Input>
+
+				<Label text="Plus: " labelFor="plusInput" width="40px"/>
+				<CheckBox text="">
+					<layoutData>
+						<FlexItemData growFactor="2" />
+					</layoutData>
+					</CheckBox>
+				<Label text="Fatturabile " width="70px"/>
+				<CheckBox text="" selected="true">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</CheckBox>
+			</FlexBox>
+	</Panel>
+			
+			
+			<Panel>
+			<FlexBox alignItems="Start" class="sapUiDemoFlexBoxSizeAdjustmentsZeroWidthItems" id="Flexbox5">
+				<Button
+				text="Annulla"
+				class="sapUiSmallMarginBottom"
+				type="Reject"
+				press=""
+				width="100px" >
+				<layoutData>
+					<FlexItemData growFactor="1" />
+				</layoutData>
+				</Button>
+				<Button
+				text="Conferma"
+				class="sapUiSmallMarginBottom"
+				type="Accept"
+				press=""
+				enabled="false"
+				width="100px" />
+			
+			</FlexBox>
+			
+
+			</Panel>
+			
+			
+
+		</Page>
+	</App>
+</mvc:View>
