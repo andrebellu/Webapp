@@ -11,7 +11,7 @@ sap.ui.define(
     ],
     function (
         Controller,
-        MessageToast,
+        msgT,
         JSONModel,
         DateRange,
         DateFormat,
@@ -64,16 +64,16 @@ sap.ui.define(
                         msg =
                             "Swipe direction is from the end to the beginning (right to left in LTR languages)";
                     }
-                    MessageToast.show(msg);
+                    msgT.show(msg);
                 },
 
-                handleEdit: function (evt) {
+                handleMore: function (evt) {
                     var oButton = evt.getSource();
                     this.byId("actionSheet").openBy(oButton);
                 },
 
                 clicked: function () {
-                    MessageToast.show("Rapportino clicked");
+                    msgT.show("Rapportino clicked");
                 },
 
                 handleSelectToday: function (evt) {
@@ -98,11 +98,19 @@ sap.ui.define(
                     var sRecipient = evt.getParameter("value");
                     console.log(sRecipient);
                     var sMsg = oBundle.getText("currentDate", [sRecipient]);
-                    MessageToast.show(sMsg);
+                    msgT.show(sMsg);
                 },
 
-                handleHomeIconPress: function () {
-                    MessageToast.show("Home icon pressed");
+                handleDuplicate: function (evt) {
+                    msgT.show("Duplicate");
+                },
+
+                handleEdit: function (evt) {
+                    msgT.show("Edit");
+                },
+
+                handleDelete: function (evt) {
+                    msgT.show("Delete");
                 },
             }
         );

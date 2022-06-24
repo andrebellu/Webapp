@@ -24,12 +24,12 @@
 
 			<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
 
-			<List noDataText="No element to display" items="{/items}">
+			<List noDataText="No element to display" items="{/items}" id="list">
 				<items>
-					<StandardListItem type="Navigation" title="{id} - {cliente}" description="{descrizione}" icon="sap-icon://activities" info="Ore: {ore}" class="item" press=".clicked"/>
+					<StandardListItem type="Navigation" title="{id} - {cliente}" description="{descrizione}" icon="sap-icon://activities" info="{ore}" class="item" id="element" press=".clicked"/>
 				</items>
 				<swipeContent>
-					<Button press="handleEdit" icon="sap-icon://overflow" ariaHasPopup="Menu">
+					<Button press="handleMore" icon="sap-icon://overflow" ariaHasPopup="Menu">
 						<dependents>
 							<core:Fragment fragmentName="sap.ui.demo.walkthrough.view.ActionSheet" type="XML" />
 						</dependents>
