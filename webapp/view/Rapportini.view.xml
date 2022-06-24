@@ -1,6 +1,7 @@
 <mvc:View controllerName="sap.ui.demo.walkthrough.controller.Rapportini"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:u="sap.ui.unified" class="viewPadding">
 
@@ -15,24 +16,26 @@
 							<u:disabledDates>
 								<u:DateRange startDate="{start}" endDate="{end}"/>
 							</u:disabledDates>
-						</u:Calendar>
+						</u:Calendar> 
 					</l:VerticalLayout>
 				</FlexBox>
 			-->
-			<Button class="btnDP" ariaHasPopup="Dialog" text="Open Date Picker" press=".openDatePicker" />
+			<Button class="btnDP" ariaHasPopup="Dialog" text="{i18n>currentDate}" press="openDatePicker" />
 
 			<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
 
 			<List noDataText="No element to display" items="{/items}">
 				<items>
-					<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
+					<StandardListItem type="Navigation" title="{id} - {cliente}" description="{descrizione}" icon="sap-icon://activities" info="Ore: {ore}" class="item" press=".clicked"/>
 				</items>
 				<swipeContent>
-					<Button press="handleEdit" icon="sap-icon://overflow"/>
+					<Button press="handleEdit" icon="sap-icon://overflow" ariaHasPopup="Menu">
+						<dependents>
+							<core:Fragment fragmentName="sap.ui.demo.walkthrough.view.ActionSheet" type="XML" />
+						</dependents>
+					</Button>
 				</swipeContent>
 			</List>
-
 		</Panel>
 	</App>
-
 </mvc:View>

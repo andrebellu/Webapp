@@ -58,9 +58,10 @@
 			"sample": {
 				"stretch": true,
 				"files": [
+                    "view/ActionSheet.fragment.xml",
+                    "controller/Rapportini.controller.js",
 					"model/data.json",
-					"manifest.json",
-                    "view/ActionSheet.fragment.xml"
+					"manifest.json"
 				]
 			}
 		}

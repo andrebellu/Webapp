@@ -6,6 +6,8 @@ sap.ui.define(
         "sap/ui/unified/DateRange",
         "sap/ui/core/format/DateFormat",
         "sap/ui/core/library",
+        "sap/ui/core/Fragment",
+        "sap/ui/model/resource/ResourceModel",
     ],
     function (
         Controller,
@@ -13,7 +15,9 @@ sap.ui.define(
         JSONModel,
         DateRange,
         DateFormat,
-        coreLibrary
+        coreLibrary,
+        Fragment,
+        ResourceModel
     ) {
         "use strict";
 
@@ -24,14 +28,23 @@ sap.ui.define(
             {
                 oFormatYyyymmdd: null,
 
-                onInit: function (evt) {
+                onInit: function () {
                     // set explored app's demo model on this sample
                     var oModel = new JSONModel("model/data.json");
+
+                    var today = new Date().toLocaleDateString();
+                    console.log(today);
+
                     this.getView().setModel(oModel);
                     this.oFormatYyyymmdd = DateFormat.getInstance({
-                        pattern: "yyyy-MM-dd",
+                        pattern: "dd-MM-yyyy",
                         calendarType: CalendarType.Gregorian,
                     });
+                    // set i18n model on view
+                    var i18nModel = new ResourceModel({
+                        bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
+                    });
+                    this.getView().setModel(i18nModel, "i18n");
                 },
 
                 handleSwipe: function (evt) {
@@ -54,15 +67,16 @@ sap.ui.define(
                     MessageToast.show(msg);
                 },
 
-                handleEdit: function () {
-                    var oButton = oEvent.getSource();
+                handleEdit: function (evt) {
+                    var oButton = evt.getSource();
                     this.byId("actionSheet").openBy(oButton);
                 },
 
                 clicked: function () {
-                    MessageToast.show("ciao");
+                    MessageToast.show("Rapportino clicked");
                 },
-                handleSelectToday: function (oEvent) {
+
+                handleSelectToday: function (evt) {
                     var oCalendar = this.byId("calendar");
                     oCalendar.removeAllSelectedDates();
                     oCalendar.addSelectedDate(
@@ -70,17 +84,24 @@ sap.ui.define(
                     );
                     this._updateText(oCalendar);
                 },
-                openDatePicker: function (oEvent) {
+
+                openDatePicker: function (evt) {
                     this.getView()
                         .byId("HiddenDP")
-                        .openBy(oEvent.getSource().getDomRef());
+                        .openBy(evt.getSource().getDomRef());
                 },
-                changeDateHandler: function (oEvent) {
-                    MessageToast.show(
-                        "Date selected: " + oEvent.getParameter("value")
-                    );
+
+                changeDateHandler: function (evt) {
+                    var oBundle = this.getView()
+                        .getModel("i18n")
+                        .getResourceBundle();
+                    var sRecipient = evt.getParameter("value");
+                    console.log(sRecipient);
+                    var sMsg = oBundle.getText("currentDate", [sRecipient]);
+                    MessageToast.show(sMsg);
                 },
-                handleHomeIconPress: function (oEvent) {
+
+                handleHomeIconPress: function () {
                     MessageToast.show("Home icon pressed");
                 },
             }
