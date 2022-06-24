@@ -15,7 +15,7 @@
             <Label text="Utente" labelFor="nameInput" />
             <Input
                 id="nameInput"
-                class="sapUiSmallMarginBottom"
+                class="roundedInput"
                 placeholder="Inserisci il nome utente"
                 valueStateText="La casella non deve essere vuota. Massimo 10 caratteri."
                 value="{
@@ -31,9 +31,13 @@
             <Label text="Password" labelFor="passwordInput" />
             <Input
                 id="passwordInput"
+                class="roundedInput"
                 type="Password"
                 placeholder="Enter password" />
-            <Button text="Submit" press=".onSubmit" />
+            <Button 
+                class="roundedButton"
+                text="Submit"
+                press=".onSubmit" />
         </l:VerticalLayout>
         </FlexBox>
     </Shell>
