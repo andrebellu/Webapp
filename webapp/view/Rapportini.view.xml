@@ -7,7 +7,7 @@
 	<App>
 		<Panel>
 
-				<Label text="Rapportini" class="titleRP"/>
+			<Label text="Rapportini" class="titleRP"/>
 			<!-- 
 				<FlexBox class="fl">
 					<l:VerticalLayout>
@@ -19,18 +19,18 @@
 					</l:VerticalLayout>
 				</FlexBox>
 			-->
-				<Button class="btnDP" ariaHasPopup="Dialog" text="Open Date Picker" press=".openDatePicker" />
+			<Button class="btnDP" ariaHasPopup="Dialog" text="Open Date Picker" press=".openDatePicker" />
 
-				<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
+			<DatePicker id="HiddenDP" hideInput="true" change=".changeDateHandler" showCurrentDateButton="true"/>
 
-				<List noDataText="No element to display" items="{/items}">
-					<items>
-						<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
-					</items>
-					<swipeContent>
-						<Button press="handleEdit" icon="sap-icon://overflow"/>
-					</swipeContent>
-				</List>
+			<List noDataText="No element to display" items="{/items}">
+				<items>
+					<StandardListItem type="Navigation" title="{title}" description="{subTitle}" icon="sap-icon://activities" class="item" press=".clicked"/>
+				</items>
+				<swipeContent>
+					<Button press="handleEdit" icon="sap-icon://overflow"/>
+				</swipeContent>
+			</List>
 
 		</Panel>
 	</App>
